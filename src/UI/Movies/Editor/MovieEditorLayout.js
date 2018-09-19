@@ -188,6 +188,34 @@ module.exports = Marionette.Layout.extend({
                     icon     : 'icon-radarr-movie-released',
                     callback : this._setFilter
                 },
+				{
+				   key      : 'netflix',
+				   title    : '',
+				   tooltip  : 'On Netflix',
+				   icon     : 'icon-radarr-movie-netflix',
+				   callback : this._setFilter
+				},
+				{
+                   key      : 'primevideo',
+                   title    : '',
+                   tooltip  : 'On PrimeVideo',
+                   icon     : 'icon-radarr-movie-amazon',
+                   callback : this._setFilter
+                },
+				{
+				   key      : 'hoopla',
+				   title    : '',
+				   tooltip  : 'On Hoopla',
+				   icon     : 'icon-radarr-movie-hoopla',
+				   callback : this._setFilter
+				},
+                {
+				   key      : 'tubi',
+				   title    : '',
+				   tooltip  : 'On TubiTV',
+				   icon     : 'icon-radarr-movie-tubi',
+				   callback : this._setFilter
+				},
                 {
                     key      : 'announced',
                     title    : '',

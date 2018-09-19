@@ -7,6 +7,7 @@ using NzbDrone.Common.Extensions;
 using NzbDrone.Common.Instrumentation.Extensions;
 //using NzbDrone.Core.DataAugmentation.DailyMovie;
 using NzbDrone.Core.Exceptions;
+using NzbDrone.Core.Configuration;
 using NzbDrone.Core.MediaFiles;
 using NzbDrone.Core.Messaging.Commands;
 using NzbDrone.Core.Messaging.Events;
@@ -25,12 +26,13 @@ namespace NzbDrone.Core.Movies
         private readonly IMovieService _movieService;
         private readonly IAlternativeTitleService _titleService;
         private readonly IEventAggregator _eventAggregator;
-        private readonly IManageCommandQueue _commandQueueManager;
+	    private readonly IManageCommandQueue _commandQueueManager;
         private readonly IDiskScanService _diskScanService;
         private readonly ICheckIfMovieShouldBeRefreshed _checkIfMovieShouldBeRefreshed;
         private readonly IRadarrAPIClient _apiClient;
 
         private readonly Logger _logger;
+        private readonly IConfigService _settingsService;
 
         public RefreshMovieService(IProvideMovieInfo movieInfo,
                                     IMovieService movieService,
@@ -39,7 +41,8 @@ namespace NzbDrone.Core.Movies
                                     IDiskScanService diskScanService,
                                     IRadarrAPIClient apiClient,
                                     ICheckIfMovieShouldBeRefreshed checkIfMovieShouldBeRefreshed,
-                                    IManageCommandQueue commandQueue,
+		                            IManageCommandQueue commandQueue,
+                                    IConfigService settingsService,
                                     Logger logger)
         {
             _movieInfo = movieInfo;
@@ -47,7 +50,8 @@ namespace NzbDrone.Core.Movies
             _titleService = titleService;
             _eventAggregator = eventAggregator;
             _apiClient = apiClient;
-            _commandQueueManager = commandQueue;
+		    _commandQueueManager = commandQueue;
+            _settingsService = settingsService;
             _diskScanService = diskScanService;
             _checkIfMovieShouldBeRefreshed = checkIfMovieShouldBeRefreshed;
             _logger = logger;
@@ -97,6 +101,63 @@ namespace NzbDrone.Core.Movies
             movie.YouTubeTrailerId = movieInfo.YouTubeTrailerId;
             movie.Studio = movieInfo.Studio;
             movie.HasPreDBEntry = movieInfo.HasPreDBEntry;
+
+            if (_settingsService.EnableNetflix == "disabledKeep")
+            {
+                movieInfo.NetflixUrl = movie.NetflixUrl;
+            }
+            if (_settingsService.EnablePrimeVideo == "disabledKeep")
+            {
+                movieInfo.PrimeVideoUrl = movie.PrimeVideoUrl;
+            }
+            if (_settingsService.EnableHoopla == "disabledKeep")
+            {
+                movieInfo.HooplaUrl = movie.HooplaUrl;
+            }
+            if (_settingsService.EnableTubi == "disabledKeep")
+            {
+                movieInfo.TubiUrl = movie.TubiUrl;
+            }
+
+            // it is anticipated that this could conflict
+            // with things that were unmonitored when files were deleted
+            // and we dont want to inadvertantly remonitor them when
+            // a title leaves netflix. right now this would be considered a user error = because they should disable one or the other
+            if (movie.Monitored) // maybe only do this for downloaded items too?
+            {
+                /*if (_settingsService.IgnoreNetflixTitles == "onAdd")
+                {
+                    if ((movieInfo.NetflixUrl != null) && (movie.NetflixUrl == null))
+                    {
+                        movie.Monitored = false;
+                    }
+                }
+                */
+                if (((_settingsService.IgnoreNetflixTitles == "enabled") && (movieInfo.NetflixUrl != null)) || ((_settingsService.IgnorePrimeVideoTitles == "enabled") && (movieInfo.PrimeVideoUrl != null)))
+                {
+                    movie.Monitored = false;
+                }
+            }
+            else if (!movie.Monitored)
+            {
+                /*if (_settingsService.MonitorLeaveNetflix == "onRemoval")
+                {
+                    if ((movieInfo.NetflixUrl == null) && (movie.NetflixUrl != null))
+                    {
+                        movie.Monitored = true;
+                    }
+                }*/
+                if ((_settingsService.MonitorLeaveNetflixPrimeVideo == "enabled") && (movieInfo.NetflixUrl == null) && (movieInfo.PrimeVideoUrl == null))
+                {
+                    movie.Monitored = true;
+                }
+            }
+
+            movie.JustWatchUrl = movieInfo.JustWatchUrl;
+            movie.NetflixUrl = movieInfo.NetflixUrl;
+            movie.PrimeVideoUrl = movieInfo.PrimeVideoUrl;
+            movie.HooplaUrl = movieInfo.HooplaUrl;
+            movie.TubiUrl = movieInfo.TubiUrl;
 
             try
             {

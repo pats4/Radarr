@@ -122,6 +122,26 @@ Handlebars.registerHelper('youTubeTrailerUrl', function() {
     return 'https://www.youtube.com/watch?v=' + this.youTubeTrailerId;
 });
 
+Handlebars.registerHelper('netflixUrl', function() {
+    return this.netflixUrl;
+});
+
+Handlebars.registerHelper('primeVideoUrl', function() {
+    return this.primeVideoUrl;
+});
+
+Handlebars.registerHelper('hooplaUrl', function() {
+    return this.hooplaUrl;
+});
+
+Handlebars.registerHelper('tubiUrl', function() {
+    return this.tubiUrl;
+});
+
+Handlebars.registerHelper('justWatchUrl', function() {
+    return this.justWatchUrl;
+});
+
 Handlebars.registerHelper('homepage', function() {
     return this.website;
 });

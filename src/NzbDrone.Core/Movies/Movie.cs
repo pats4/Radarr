@@ -78,6 +78,11 @@ namespace NzbDrone.Core.Movies
                 return true;
             }
         }
+        public string NetflixUrl { get; set; }
+        public string PrimeVideoUrl { get; set; }
+        public string HooplaUrl { get; set; }
+        public string TubiUrl { get; set; }
+        public string JustWatchUrl { get; set; }
 
         public bool HasFile => MovieFileId > 0;
 

@@ -135,6 +135,7 @@
     <Compile Include="Datastore\Converters\CustomFormatIntConverter.cs" />
     <Compile Include="Datastore\Converters\QualityTagStringConverter.cs" />
     <Compile Include="Datastore\Migration\123_create_netimport_table.cs" />
+    <Compile Include="Datastore\Migration\152_add_netflixurl_to_table.cs" />
     <Compile Include="Datastore\Migration\148_remove_extra_naming_config.cs" />
     <Compile Include="Datastore\Migration\146_naming_config_colon_replacement_format.cs" />
     <Compile Include="Datastore\Migration\147_add_custom_formats.cs" />

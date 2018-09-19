@@ -221,7 +221,7 @@ module.exports = Marionette.Layout.extend({
                     name  : 'profileId'
                 },
                 {
-                    title : 'In Cinemas',
+                    title : 'Initial Release',
                     name  : 'inCinemas'
                 },
                 /*{
@@ -272,6 +272,34 @@ module.exports = Marionette.Layout.extend({
                     icon     : 'icon-radarr-movie-released',
                     callback : this._setFilter
                 },
+				{
+				    key      : 'netflix',
+				    title    : '',
+				    tooltip  : 'On Netflix',
+				    icon     : 'icon-radarr-movie-netflix',
+				    callback : this._setFilter
+				},
+                {
+                    key      : 'primevideo',
+                    title    : '',
+                    tooltip  : 'On PrimeVideo',
+                    icon     : 'icon-radarr-movie-amazon',
+                    callback : this._setFilter
+                },
+                {
+				    key      : 'hoopla',
+				    title    : '',
+				    tooltip  : 'On Hoopla',
+				    icon     : 'icon-radarr-movie-hoopla',
+				    callback : this._setFilter
+				},
+				{
+				    key      : 'tubi',
+				    title    : '',
+				    tooltip  : 'On TubiTV',
+				    icon     : 'icon-radarr-movie-tubi',
+				    callback : this._setFilter
+				},
                 {
                     key      : 'announced',
                     title    : '',
@@ -441,7 +469,10 @@ module.exports = Marionette.Layout.extend({
         var announced = 0;
 		var incinemas = 0;
 		var released = 0;
-
+        var netflix = 0;
+		var primevideo = 0;
+		var hoopla = 0;
+		var tubi = 0;
     	var monitored = 0;
 
 		var downloaded =0;
@@ -464,7 +495,18 @@ module.exports = Marionette.Layout.extend({
 	    	else if (model.get('status').toLowerCase() === 'announced') {
             	announced++;
         	}
-
+            if (model.get('netflixUrl')) {
+   		        netflix++;
+	        }
+			if (model.get('primeVideoUrl')) {
+			   primevideo++;
+			}
+			if (model.get('hooplaUrl')) {
+			   hoopla++;
+			}
+			if (model.get('tubiUrl')) {
+			   tubi++;
+			}
         	if (model.get('monitored')) {
             		monitored++;
   			if (model.get('downloaded')) {
@@ -511,7 +553,11 @@ module.exports = Marionette.Layout.extend({
 	    	missingMonitored 			    : missingMonitored,
             missingMonitoredAvailable       : missingMonitoredAvailable,
 	    	missingMonitoredNotAvailable    : missingMonitoredNotAvailable,
-	    	missingNotMonitored 		    : missingNotMonitored
+	    	missingNotMonitored 		    : missingNotMonitored,
+			primevideo                      : primevideo,
+			netflix      				    : netflix,
+			tubi                            : tubi,
+			hoopla                          : hoopla
         });
 
         this.footer.show(new FooterView({ model : footerModel }));

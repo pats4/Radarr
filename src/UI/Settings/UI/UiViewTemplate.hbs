@@ -117,6 +117,158 @@
             </div>
         </div>
     </fieldset>
+<fieldset>
+        <legend>JustWatch</legend>
+	          <div class="form-group">
+	              <label class="col-sm-3 control-label">JustWatch Locale</label>
+	              <div class="col-sm-4">
+	                  <select name="justWatchLocale" class="form-control">
+	                      <option value="en_CA">Canada</option>
+   	                      <option value="en_US">United States</option>
+                          <option value="en_GB">Great Britain</option>
+                          <option value="en_AU">Austrailia</option>
+                          <option value="en_IE">Ireland</option>
+                          <option value="en_MX">Mexico</option>
+                          <option value="fr_FR">France</option>
+                          <option value="pt_BR">Brazil</option>
+                          <option value="de_DE">Germany</option>
+                          <option value="es_ES">Spain</option>
+                          <option value="en_NL">Netherlands</option>
+                          <option value="en_ZA">South Africa</option>
+                          <option value="en_NZ">New Zealand</option>
+                    </select>
+	              </div>
+	          </div>
+
+	          <div class="form-group">
+	              <label class="col-sm-3 control-label">Netflix Support Level</label>
+	              <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If/how Netflix data is obtained and set (on refresh)"/>
+                </div>
+
+	              <div class="col-sm-4 col-sm-pull-1">
+	                  <select name="enableNetflix" class="form-control">
+		                    <option value="disabled">Disabled-Clear existing data</option>
+				    <option value="disabledKeep">Disabled-Keep existing data</option>
+		                    <option value="enabled">Enabled</option>
+	                  </select>
+	              </div>
+	          </div>
+	          <div class="form-group">
+	              <label class="col-sm-3 control-label">Ignore Netflix Titles</label>
+	              <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If titles are unmonitored based on netflix status (on refresh)"/>
+                </div>
+
+	              <div class="col-sm-4 col-sm-pull-1">
+	                  <select name="ignoreNetflixTitles" class="form-control">
+		                    <option value="disabled">Disabled</option>
+		                    <option value="enabled">Enabled</option>
+	                  </select>
+	              </div>
+	          </div>
+	          
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">PrimeVideo Support Level</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If/how PrimeVideo data is obtained and set (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="enablePrimeVideo" class="form-control">
+                            <option value="disabled">Disabled-Clear existing data</option>
+                    <option value="disabledKeep">Disabled-Keep existing data</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Ignore PrimeVideo Titles</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If titles are unmonitored based on PrimeVideo status (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="ignorePrimeVideoTitles" class="form-control">
+                            <option value="disabled">Disabled</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Hoopla Support Level</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If/how Hoopla data is obtained and set (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="enableHoopla" class="form-control">
+                            <option value="disabled">Disabled-Clear existing data</option>
+                    <option value="disabledKeep">Disabled-Keep existing data</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Ignore Hoopla Titles</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If titles are unmonitored based on Hoopla status (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="ignoreHooplaTitles" class="form-control">
+                            <option value="disabled">Disabled</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">TubiTV Support Level</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If/how TubiTV data is obtained and set (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="enableTubi" class="form-control">
+                            <option value="disabled">Disabled-Clear existing data</option>
+                    <option value="disabledKeep">Disabled-Keep existing data</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Ignore TubiTV Titles</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If titles are unmonitored based on TubiTV status (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="ignoreTubiTitles" class="form-control">
+                            <option value="disabled">Disabled</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Monitor if not on Netflix/PrimeVideo</label>
+                  <div class="col-sm-1 col-sm-push-4 help-inline">
+                    <i class="icon-radarr-form-info" title="If titles are monitored based on Netflix/PrimeVideo status (on refresh)"/>
+                </div>
+
+                  <div class="col-sm-4 col-sm-pull-1">
+                      <select name="monitorLeaveNetflixPrimeVideo" class="form-control">
+                            <option value="disabled">Disabled</option>
+                            <option value="enabled">Enabled</option>
+                      </select>
+                  </div>
+              </div>
+
+	          
+	      </div>
+    </fieldset>
 
     <fieldset>
         <legend>Style</legend>

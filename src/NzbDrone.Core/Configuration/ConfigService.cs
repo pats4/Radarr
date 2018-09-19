@@ -414,6 +414,70 @@ namespace NzbDrone.Core.Configuration
             set { SetValue("ShowRelativeDates", value); }
         }
 
+        public string JustWatchLocale 
+        {
+            get { return GetValue("JustWatchLocale", "en_CA"); }
+
+            set { SetValue("JustWatchLocale", value); }
+        }
+
+        public string EnableNetflix
+        {
+            get { return GetValue("EnableNetflix", "disabled"); }
+            set { SetValue("EnableNetflix", value); }
+        }
+
+        public string IgnoreNetflixTitles
+        {
+            get { return GetValue("IgnoreNetflixTitles", "disabled"); }
+
+            set { SetValue("IgnoreNetflixTitles", value); }
+        }
+
+        public string EnablePrimeVideo
+        {
+            get { return GetValue("EnablePrimeVideo", "disabled"); }
+            set { SetValue("EnablePrimeVideo", value); }
+        }
+
+        public string IgnorePrimeVideoTitles
+        {
+            get { return GetValue("IgnorePrimeVideoTitles", "disabled"); }
+
+            set { SetValue("IgnorePrimeVideoTitles", value); }
+        }
+
+        public string EnableHoopla
+        {
+            get { return GetValue("EnableHoopla", "disabled"); }
+            set { SetValue("EnableHoopla", value); }
+        }
+
+        public string IgnoreHooplaTitles
+        {
+            get { return GetValue("IgnoreHooplaTitles", "disabled"); }
+
+            set { SetValue("IgnoreHooplaTitles", value); }
+        }
+        public string EnableTubi
+        {
+            get { return GetValue("EnableTubi", "disabled"); }
+            set { SetValue("EnableTubi", value); }
+        }
+
+        public string IgnoreTubiTitles
+        {
+            get { return GetValue("IgnoreTubiTitles", "disabled"); }
+
+            set { SetValue("IgnoreTubiTitles", value); }
+        }
+        public string MonitorLeaveNetflixPrimeVideo
+        {
+            get { return GetValue("MonitorLeaveNetflixPrimeVideo", "disabled"); }
+
+            set { SetValue("MonitorLeaveNetflixPrimeVideo", value); }
+        }
+
         public bool EnableColorImpairedMode
         {
             get { return GetValueBoolean("EnableColorImpairedMode", false); }

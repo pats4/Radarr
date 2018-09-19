@@ -79,6 +79,18 @@ namespace NzbDrone.Core.Configuration
         string TimeFormat { get; set; }
         bool ShowRelativeDates { get; set; }
 
+        string JustWatchLocale { get; set; }
+        string EnableNetflix { get; set; }
+        string IgnoreNetflixTitles { get; set; }
+        string EnablePrimeVideo { get; set; }
+        string IgnorePrimeVideoTitles { get; set; }
+        string EnableHoopla { get; set; }
+        string IgnoreHooplaTitles { get; set; }
+        string EnableTubi { get; set; }
+        string IgnoreTubiTitles { get; set; }
+
+        string MonitorLeaveNetflixPrimeVideo { get; set; }
+
         bool EnableColorImpairedMode { get; set; }
 
         //Internal

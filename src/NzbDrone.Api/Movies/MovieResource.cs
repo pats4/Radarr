@@ -40,6 +40,12 @@ namespace NzbDrone.Api.Movies
         public string YouTubeTrailerId { get; set; }
         public string Studio { get; set; }
 
+        public string NetflixUrl { get; set; }
+        public string PrimeVideoUrl { get; set; }
+        public string HooplaUrl { get; set; }
+        public string TubiUrl { get; set; }
+        public string JustWatchUrl { get; set; }
+
         //View & Edit
         public string Path { get; set; }
         public int ProfileId { get; set; }
@@ -167,7 +173,12 @@ namespace NzbDrone.Api.Movies
                 Ratings = model.Ratings,
                 MovieFile = movieFile,
                 YouTubeTrailerId = model.YouTubeTrailerId,
-                Studio = model.Studio
+                Studio = model.Studio,
+                NetflixUrl = model.NetflixUrl,
+                JustWatchUrl = model.JustWatchUrl,
+                HooplaUrl = model.HooplaUrl,
+                TubiUrl = model.TubiUrl,
+                PrimeVideoUrl = model.PrimeVideoUrl
             };
         }
 
@@ -221,7 +232,12 @@ namespace NzbDrone.Api.Movies
                 //AlternativeTitles = resource.AlternativeTitles,
                 Ratings = resource.Ratings,
                 YouTubeTrailerId = resource.YouTubeTrailerId,
-                Studio = resource.Studio
+                Studio = resource.Studio,
+                NetflixUrl = resource.NetflixUrl,
+                JustWatchUrl = resource.JustWatchUrl,
+                PrimeVideoUrl = resource.PrimeVideoUrl,
+                HooplaUrl = resource.HooplaUrl,
+                TubiUrl = resource.TubiUrl
             };
         }
 

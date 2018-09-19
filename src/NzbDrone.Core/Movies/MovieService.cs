@@ -109,6 +109,38 @@ namespace NzbDrone.Core.Movies
                         break;
                 }
             }
+            else if (FilterKey == "netflixUrl")
+            {
+                if (FilterType == "hasValue")
+                {
+                    return v => v.NetflixUrl != null;
+                }
+            }
+            else if (FilterKey == "primeVideoUrl")
+            {
+                if (FilterType == "hasValue")
+                {
+                   return v => v.PrimeVideoUrl !=null;
+                }
+            }
+            else if (FilterKey == "hooplaUrl")
+            {
+                if (FilterType == "hasValue")
+                {
+                    return v => v.HooplaUrl != null;
+                }
+            }
+            else if (FilterKey == "tubiUrl")
+            {
+                if (FilterType == "hasValue")
+                {
+                    return v => v.TubiUrl != null;
+                }
+            }
+            else if (FilterKey == "downloaded")
+            {
+                return v => v.MovieFileId == 0;
+            }
             else if (FilterKey == "downloaded")
             {
                 return v => v.MovieFileId == 0;

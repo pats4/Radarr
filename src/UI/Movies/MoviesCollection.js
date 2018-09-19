@@ -38,6 +38,27 @@ var filterModes = {
         'downloaded',
         false
     ],
+	'netflix'   : [
+	    'netflixUrl',
+	    null,
+	    'hasValue',
+	    //function(model) { return model.getStatus() == "netflix"; }
+    ],
+	'primevideo' : [
+	    'primeVideoUrl',
+		null,
+		'hasValue',
+	],
+	'hoopla' : [
+	    'hooplaUrl',
+	    null,
+	    'hasValue',
+	],
+    'tubi' : [
+	    'tubiUrl',
+	    null,
+	    'hasValue',
+	],
     'released'  : [
         "status",
         "released",

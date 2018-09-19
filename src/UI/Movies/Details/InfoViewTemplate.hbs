@@ -32,13 +32,27 @@
             {{#if imdbId}}
                 <a href="{{imdbUrl}}" class="label label-primary">IMDB</a>
             {{/if}}
-
+            {{#if justWatchUrl}}
+                <a href="{{justWatchUrl}}" class="label label-primary">JustWatch</a>
+            {{/if}}
             {{#if website}}
               <a href="{{homepage}}" class="label label-primary">Homepage</a>
             {{/if}}
 
             {{#if youTubeTrailerId}}
                 <a href="{{youTubeTrailerUrl}}" class="label label-primary">Trailer</a>
+            {{/if}}
+	        {{#if netflixUrl}}
+	            <a href="{{netflixUrl}}" class="label label-info">Netflix</a>
+	        {{/if}}
+            {{#if primeVideoUrl}}
+                <a href="{{primeVideoUrl}}" class="label label-info">PrimeVideo</a>
+            {{/if}}
+            {{#if hooplaUrl}}
+                <a href="{{hooplaUrl}}" class="label label-info">Hoopla</a>
+            {{/if}}
+            {{#if tubiUrl}}
+                <a href="{{tubiUrl}}" class="label label-info">TubiTV</a>
             {{/if}}
         </span>
     </div>
