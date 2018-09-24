@@ -16,6 +16,7 @@ namespace NzbDrone.Api.Config
         public bool ShowRelativeDates { get; set; }
 
         public bool EnableColorImpairedMode { get; set; }
+        public string OmdbApiKey {get; set; }
     }
 
     public static class UiConfigResourceMapper
@@ -33,6 +34,7 @@ namespace NzbDrone.Api.Config
                 ShowRelativeDates = model.ShowRelativeDates,
 
                 EnableColorImpairedMode = model.EnableColorImpairedMode,
+                OmdbApiKey = model.OmdbApiKey,
             };
         }
     }

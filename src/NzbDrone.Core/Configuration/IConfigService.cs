@@ -80,6 +80,7 @@ namespace NzbDrone.Core.Configuration
         bool ShowRelativeDates { get; set; }
 
         bool EnableColorImpairedMode { get; set; }
+        string OmdbApiKey { get; set; }
 
         //Internal
         bool CleanupMetadataImages { get; set; }

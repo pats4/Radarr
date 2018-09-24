@@ -421,6 +421,13 @@ namespace NzbDrone.Core.Configuration
             set { SetValue("EnableColorImpairedMode", value); }
         }
 
+        public string OmdbApiKey
+        {
+            get { return GetValue("OmdbApiKey", string.Empty); }
+
+            set { SetValue("OmdbApiKey", value); }
+        }
+
         public bool CleanupMetadataImages
         {
             get { return GetValueBoolean("CleanupMetadataImages", true); }
