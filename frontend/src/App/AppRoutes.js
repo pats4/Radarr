@@ -26,6 +26,7 @@ import MetadataSettings from 'Settings/Metadata/MetadataSettings';
 import TagSettings from 'Settings/Tags/TagSettings';
 import GeneralSettingsConnector from 'Settings/General/GeneralSettingsConnector';
 import UISettingsConnector from 'Settings/UI/UISettingsConnector';
+import JustwatchSettingsConnector from 'Settings/Justwatch/JustwatchSettingsConnector';
 import Status from 'System/Status/Status';
 import Tasks from 'System/Tasks/Tasks';
 import BackupsConnector from 'System/Backup/BackupsConnector';
@@ -185,6 +186,11 @@ function AppRoutes(props) {
         component={UISettingsConnector}
       />
 
+      <Route
+	      path="/settings/justwatch"
+		    component={JustwatchSettingsConnector}
+	    />
+         
       {/*
         System
       */}
