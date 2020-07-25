@@ -40,6 +40,12 @@
   flex: 0 0 180px;
 }
 
+.justwatchLinks {
+  composes: headerCell from '~Components/Table/VirtualTableHeaderCell.css';
+
+  flex: 0 0 120px;
+}
+
 .movieStatus,
 .certification {
   composes: headerCell from '~Components/Table/VirtualTableHeaderCell.css';

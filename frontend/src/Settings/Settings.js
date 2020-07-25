@@ -145,6 +145,17 @@ function Settings() {
         <div className={styles.summary}>
           {translate('UiSettingsSummary')}
         </div>
+
+        <Link
+		      className={styles.link}
+	        to="/settings/justwatch"
+	      >
+	        Justwatch 
+	      </Link>
+
+        <div className={styles.summary}>
+          Justwatch Support (Netflix, Prime etc.) 
+        </div>
       </PageContentBody>
     </PageContent>
   );
